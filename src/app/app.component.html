@@ -1,1 +1,68 @@
-<app-header [deviceXs]="deviceXs"></app-header>
+<div class="container">
+    <div class="flex-container" fxLayout="row">
+        <mat-card class="child-1">1. One</mat-card>
+        <mat-card class="child-2">2. Two</mat-card>
+        <mat-card class="child-3">3. Three</mat-card>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="flex-container" fxLayout="column">
+        <mat-card class="child-1">1. One</mat-card>
+        <mat-card class="child-2">2. Two</mat-card>
+        <mat-card class="child-3">3. Three</mat-card>
+    </div>
+</div>
+
+<div class="container">
+    <div class="flex-container" fxLayout="row" fxLayout.xs="column">
+        <mat-card class="child-1">1. One</mat-card>
+        <mat-card class="child-2">2. Two</mat-card>
+        <mat-card class="child-3">3. Three</mat-card>
+    </div>
+</div>
+
+
+<div class="container">
+    <!-- In the first container, I have not applied any fxFlex styles to the flex box items, so the items took minimum width
+    and aligned side by side as the flex layout is row. -->
+    <h2>Normal</h2>
+    <div class="flex-container" fxLayout="row">
+        <div class="child-1">1. One</div>
+        <div class="child-2">2. Two</div>
+        <div class="child-3">3. Three</div>
+    </div>
+
+    <!-- In the second container, I added fxFlex to all flexbox items and not given any flex grow,shrink or basis values. So
+    it will take default values.
+    i.e., fxFlex means fxFlex=“1 1 0%”. -->
+    <h2>Default</h2>
+    <div class="flex-container" fxLayout="row">
+        <div class="child-1" fxFlex>1. One</div>
+        <div class="child-2" fxFlex>2. Two</div>
+        <div class="child-3" fxFlex>3. Three</div>
+    </div>
+    <!-- The width of first flexbox item (with fxFlex grow 2) will be, double the size of other two elements. -->
+    <!-- i.e, first element will be of width 250px. And other two elements will have 125px each. -->
+    <h2>fxFlex with grow shrink values</h2>
+    <div class="flex-container" fxLayout="row">
+        <div class="child-1" fxFlex="2 1 0">1. One</div>
+        <div class="child-2" fxFlex>2. Two</div>
+        <div class="child-3" fxFlex>3. Three</div>
+    </div>
+
+    <!-- 
+    El primer elemento de la caja flexible tiene un valor de encogimiento 2.
+
+    A medida que disminuye el ancho del contenedor flexible, el primer elemento se encogerá más en comparación con el
+    segundo en función del espacio disponible. -->
+    <div class="flex-container" fxLayout="row">
+        <div class="child-1" fxFlex="1 2 auto">
+            Angular fxFlex flexgrow flexshrink flexbasis </div>
+        <div class="child-2" fxFlex="1 1 auto">
+            Angular fxFlex flexgrow flexshrink flexbasis </div>
+    </div>
+
+
+</div>
